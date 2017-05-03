@@ -20,7 +20,7 @@ RUN yum install -y python wget make gcc gcc-c++ autoconf automake which \
      \
     && yum erase -y wget make gcc gcc-c++ autoconf automake \
     && find /var/log -type f -print0 | xargs -0 rm -rf /tmp/* \
-    && yum clean all \
+    && yum clean all
     
 CMD cd /usr/local/ssdb && ./ssdb-server -d ssdb.conf && cd /usr/src/proxy_pool/Run && python main.py
 
